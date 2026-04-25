@@ -1,5 +1,7 @@
 # kazakh-tts-android
 
+[![](https://jitpack.io/v/mukhamedissa/kazakh-tts-android.svg)](https://jitpack.io/#mukhamedissa/kazakh-tts-android)
+
 An Android library for offline Kazakh text-to-speech synthesis, built on [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) and the [ISSAI KazakhTTS](https://github.com/IS2AI/Kazakh_TTS) VITS model.
 
 - 6 speaker voices, 22050 Hz output
