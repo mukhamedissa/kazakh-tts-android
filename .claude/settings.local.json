@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:jitpack.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:k2-fsa.github.io)",
+      "Bash(find \"C:/Users/mukha/AndroidStudioProjects/kazakhttsandroid\" -maxdepth 3 -name \".gitignore\" -exec echo \"=== {} ===\" \\\\; -exec cat {} \\\\;)"
+    ]
+  }
+}
