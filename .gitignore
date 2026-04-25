@@ -1,0 +1,52 @@
+# Build outputs
+/build
+**/build/
+out/
+
+# Gradle
+.gradle/
+
+# Android Studio / IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+local.properties
+
+# .idea — ignore user-local and generated files, keep shareable config
+# (run configurations, code style, inspections stay tracked)
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/deploymentTargetSelector.xml
+.idea/vcs.xml
+.idea/.name
+
+# Android build artifacts
+*.apk
+*.aab
+*.aar
+*.ap_
+*.dex
+
+# NDK
+.externalNativeBuild/
+.cxx/
+
+# Signing keys — never commit these
+*.jks
+*.keystore
+*.p12
+
+# Android Profiler output
+*.hprof
+captures/
+
+# Logs
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
