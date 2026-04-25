@@ -5,7 +5,6 @@
 An Android library for offline Kazakh text-to-speech synthesis, built on [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) and the [ISSAI KazakhTTS](https://github.com/IS2AI/Kazakh_TTS) VITS model.
 
 - 6 speaker voices, 22050 Hz output
-- Streams audio while the model is still generating
 - Model loads from a remote URL, bundled assets, or a local directory
 - Pluggable logger (Timber, no-op, or custom)
 - Min SDK 26; arm64-v8a, armeabi-v7a, x86_64
@@ -14,7 +13,7 @@ An Android library for offline Kazakh text-to-speech synthesis, built on [sherpa
 
 The library uses the `kk_KZ-issai-high` ONNX model via sherpa-onnx's native runtime. On first use, the model archive is downloaded from [sherpa-onnx releases](https://github.com/k2-fsa/sherpa-onnx/releases) and extracted to the app's private files directory. Subsequent runs skip the download.
 
-Synthesis runs on a background thread. PCM samples are written to an `AudioTrack` as they arrive, so playback starts before generation finishes.
+Synthesis runs on a background thread. Generated PCM samples are written to an `AudioTrack` and played back immediately.
 
 ## Installation
 
