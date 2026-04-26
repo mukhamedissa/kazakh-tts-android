@@ -1,0 +1,32 @@
+site_name: KazakhTTS Android
+site_description: On-device Kazakh TTS for Android
+repo_url: https://github.com/mukhamedissa/kazakh-tts-android
+repo_name: mukhamedissa/kazakh-tts-android
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+
+nav:
+  - How it works: index.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - admonition
+  - toc:
+      permalink: true
