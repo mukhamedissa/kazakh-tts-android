@@ -26,12 +26,12 @@ dependencyResolutionManagement {
         mavenCentral()
         maven("https://jitpack.io")
 
-        // Needed to resolve the sherpa-onnx transitive dependency
+        // Needed to resolve the sherpa-onnx transitive dependency.
         exclusiveContent {
             forRepository {
                 ivy {
                     url = uri("https://github.com/k2-fsa/sherpa-onnx/releases/download/")
-                    patternLayout { artifact("v[revision]/[artifact]-[revision].[ext]") }
+                    patternLayout { artifact("v[revision]/[artifact]-[revision].aar") }
                     metadataSources { artifact() }
                 }
             }
@@ -44,8 +44,15 @@ dependencyResolutionManagement {
 In your module `build.gradle.kts`:
 
 ```kotlin
-implementation("io.github.mukhamedissa:kazakh-tts-android:1.0.0")
+implementation("io.github.mukhamedissa:kazakh-tts-android:1.0.0") {
+    exclude(group = "com.k2fsa.sherpa.onnx", module = "sherpa-onnx")
+}
+implementation("com.k2fsa.sherpa.onnx:sherpa-onnx:1.12.40") {
+    artifact { type = "aar" }
+}
 ```
+
+The exclude is necessary because the Ivy repository's synthetic metadata types the artifact as `jar`, which overrides the `aar` type declared in the library's POM and breaks the Android AAR transform. Excluding the transitive dependency and redeclaring it directly with `artifact { type = "aar" }` bypasses this.
 
 If you use `ModelSource.Remote` (the default), add the internet permission to `AndroidManifest.xml`:
 
